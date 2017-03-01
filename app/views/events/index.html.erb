@@ -4,5 +4,44 @@
 <%= link_to '銷貨', root_path, class:"btn btn-warning btn-lg"%>
 <%= link_to '退貨', root_path, class:"btn btn-warning btn-lg"%>
 
-<h2>目前庫存</h2>
+<h2>目前總庫存</h2>
 
+<table>
+    <thead>
+     	<tr>
+        <td>品名</td>
+        <td>描述</td>
+        <td>價錢</td>
+      </tr>
+    </thead>
+    <tbody>
+		<% @products.each do |product| %>
+	      	<tr>
+	        <td><%= product.name %></td>
+	        <td><%= product.description %></td>
+	        <td><%= product.price %></td>
+	     	 </tr>
+	    <% end %>
+	</tbody>
+</table>
+
+<h2>現有櫃位</h2>
+
+<table>
+    <thead>
+     	<tr>
+        <td>櫃名</td>
+        <td>地點</td>
+        <td>電話</td>
+      </tr>
+    </thead>
+    <tbody>
+		<% @stores.each do |store| %>
+	      	<tr>
+	        <td><%= store.title %></td>
+	        <td><%= store.address %></td>
+	        <td><%= store.tel %></td>
+	     	 </tr>
+	    <% end %>
+	</tbody>
+</table>
