@@ -23,24 +23,39 @@
 
 	<div class="container">
 		<h2>目前各店庫存</h2>
-		<table class="table">
-		    <thead>
-		     	<tr>
-		        <th>櫃名</th>
-		        <th>品名</th>
-		        <th>數量</th>
-		      	</tr>
-		    </thead>
-		    <tbody>
-				<% @ps.each do |ps| %>
-			      	<tr>
-			        <td><%= ps.store.title %></td>
-			        <td><%= ps.product.name %></td>
-			        <td><%= ps.amount %></td>
-			     	 </tr>
+	<!--test region start-->
+				<% @store.each do |store| %>
+				<table class="table">
+					<thead>
+				      	<tr>
+				        	<th><%= store.title %></th>				  
+				     	</tr>
+			     	</thead>
+			     	<tbody>
+
+			     			<table class="table">
+							    <thead>
+							     	<tr>
+							        <th>品名</th>
+							        <th>數量</th>
+							      	</tr>
+							    </thead>
+							    <tbody>
+							    	<%for x in 1..store.products.count%>
+									    <tr>
+				        					<td><%= store.products.find(x).name %></td>
+											<%ps=ProductsStore.where("store_id=? AND product_id=?",store.id,store.products.find(x).id).first%>
+				        					<td><%= ps.amount%></td>
+									    </tr>
+									<% end %>
+								</tbody>
+							</table>
+			     	</tbody>
+			     </table>
+
 			    <% end %>
-			</tbody>
-		</table>
+	<!--test region end-->
+
 	</div>
 </body>
 
