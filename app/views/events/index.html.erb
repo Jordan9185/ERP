@@ -1,47 +1,49 @@
-<h1>Newism 貨物管理系統</h1>
+<head>
+  <title>Newism 貨物管理系統</title>
+</head>
 
-<%= link_to '進貨', root_path, class:"btn btn-warning btn-lg"%>
-<%= link_to '銷貨', root_path, class:"btn btn-warning btn-lg"%>
-<%= link_to '退貨', root_path, class:"btn btn-warning btn-lg"%>
+<body>
+	<nav class="navbar navbar-default">
+	  	<div class="container-fluid">
+		    <div class="navbar-header">
+		      	<%= link_to 'Newism 貨物管理系統', root_path ,class:"navbar-brand" %>
+		    </div>
+		    <ul class="nav navbar-nav">
+		      	<li class="active"><%= link_to 'Home', root_path%></li>
+		      	<li><%= link_to '進貨', root_path %></li>
+		      	<li><%= link_to '銷貨', root_path %></li>
+		      	<li><%= link_to '退貨', root_path %></li>
+		    </ul>
+		    <ul class="nav navbar-nav navbar-right">
+		    	<li><%= link_to '註冊', root_path, class:"glyphicon glyphicon-user" %></li>
+		    	<li><%= link_to '登入', root_path, class:"glyphicon glyphicon-log-in" %></li>
+		    </ul>
+	  	</div>
+	</nav>
 
-<h2>目前總庫存</h2>
+	<div class="container">
+		<h2>目前各店庫存</h2>
+		<table class="table">
+		    <thead>
+		     	<tr>
+		        <th>櫃名</th>
+		        <th>品名</th>
+		        <th>數量</th>
+		      	</tr>
+		    </thead>
+		    <tbody>
+				<% @ps.each do |ps| %>
+			      	<tr>
+			        <td><%= ps.store.title %></td>
+			        <td><%= ps.product.name %></td>
+			        <td><%= ps.amount %></td>
+			     	 </tr>
+			    <% end %>
+			</tbody>
+		</table>
+	</div>
+</body>
 
-<table class="table">
-    <thead>
-     	<tr>
-        <td>品名</td>
-        <td>描述</td>
-        <td>價錢</td>
-      	</tr>
-    </thead>
-    <tbody>
-		<% @products.each do |product| %>
-	      	<tr>
-	        <td><%= product.name %></td>
-	        <td><%= product.description %></td>
-	        <td><%= product.price %></td>
-	     	 </tr>
-	    <% end %>
-	</tbody>
-</table>
-
-<h2>現有櫃位</h2>
-
-<table class="table">
-    <thead>
-     	<tr>
-        <td>櫃名</td>
-        <td>地點</td>
-        <td>電話</td>
-      	</tr>
-    </thead>
-    <tbody>
-		<% @stores.each do |store| %>
-	      	<tr>
-	        <td><%= store.title %></td>
-	        <td><%= store.address %></td>
-	        <td><%= store.tel %></td>
-	     	 </tr>
-	    <% end %>
-	</tbody>
-</table>
+<footer class="navbar-fixed-bottom">
+	Website design by Jordan Copyright © 2017 Newism. All rights reserved. 
+</footer>

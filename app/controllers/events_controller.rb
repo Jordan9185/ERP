@@ -1,6 +1,5 @@
 class EventsController < ApplicationController
 	def index
-		@products = Product.all
-		@stores = Store.all
+		@ps=ProductsStore.all
 	end
 end
