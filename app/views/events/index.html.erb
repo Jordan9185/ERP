@@ -6,13 +6,13 @@
 
 <h2>目前總庫存</h2>
 
-<table>
+<table class="table">
     <thead>
      	<tr>
         <td>品名</td>
         <td>描述</td>
         <td>價錢</td>
-      </tr>
+      	</tr>
     </thead>
     <tbody>
 		<% @products.each do |product| %>
@@ -27,13 +27,13 @@
 
 <h2>現有櫃位</h2>
 
-<table>
+<table class="table">
     <thead>
      	<tr>
         <td>櫃名</td>
         <td>地點</td>
         <td>電話</td>
-      </tr>
+      	</tr>
     </thead>
     <tbody>
 		<% @stores.each do |store| %>
