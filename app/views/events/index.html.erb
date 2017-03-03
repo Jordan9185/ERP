@@ -17,7 +17,8 @@
 	<!--test region start-->
 
 			<ul class="nav navbar-nav navbar-right">
-			    <li><%= link_to 'XXX Hello!', root_path, class:"glyphicon glyphicon-user" %></li>
+
+			    <li><%= link_to 'Hello! '+current_user.user_name, root_path, class:"glyphicon glyphicon-user" %></li>
 			    <li><%= link_to '登出', destroy_user_session_path, :method => :delete ,class:"glyphicon glyphicon-log-out" %></li>
 			</ul>
 

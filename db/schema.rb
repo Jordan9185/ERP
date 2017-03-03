@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20170303024921) do
 
   create_table "users", force: :cascade do |t|
     t.integer  "store_id"
+    t.string   "user_name"
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
