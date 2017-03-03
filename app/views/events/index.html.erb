@@ -14,16 +14,19 @@
 		      	<li><%= link_to '銷貨', root_path %></li>
 		      	<li><%= link_to '退貨', root_path %></li>
 		    </ul>
-		    <ul class="nav navbar-nav navbar-right">
-		    	<li><%= link_to '註冊', root_path, class:"glyphicon glyphicon-user" %></li>
-		    	<li><%= link_to '登入', root_path, class:"glyphicon glyphicon-log-in" %></li>
-		    </ul>
+	<!--test region start-->
+
+			<ul class="nav navbar-nav navbar-right">
+			    <li><%= link_to 'XXX Hello!', root_path, class:"glyphicon glyphicon-user" %></li>
+			    <li><%= link_to '登出', destroy_user_session_path, :method => :delete ,class:"glyphicon glyphicon-log-out" %></li>
+			</ul>
+
+	<!--test region end-->
 	  	</div>
 	</nav>
 
 	<div class="container">
 		<h2>目前各店庫存</h2>
-	<!--test region start-->
 				<% @store.each do |store| %>
 				<table class="table">
 					<thead>
@@ -54,8 +57,6 @@
 			     </table>
 
 			    <% end %>
-	<!--test region end-->
-
 	</div>
 </body>
 
