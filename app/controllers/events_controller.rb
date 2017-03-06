@@ -3,4 +3,16 @@ class EventsController < ApplicationController
 	def index
 		@store=Store.all
 	end
+
+	def purchase
+
+	end
+
+	def sales
+
+	end
+
+	def return_item
+
+	end
 end
